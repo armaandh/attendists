@@ -15,10 +15,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/help', function(){
-    return "This is the help page";
+Route::get('/profile/{instructor}', function($instructor){
+  $teacher = App\Instructor::where('first_name', $instructor)->first();
+
+
+  return View::make('instructor')->with('instruc', $teacher);
 });
 
-Route::get('/contacts', function(){
-    return "Contact Me (Snow White)";
-});
+// Route::get('/profile/{student}', function($student){
+//
+//     $stud = App\Student::where('first_name', $student)->first();
+//     dd($stud);
+// });
