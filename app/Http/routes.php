@@ -18,3 +18,7 @@ Route::get('/', function () {
 Route::get('/help', function(){
     return "This is the help page";
 });
+
+Route::get('/contacts', function(){
+    return "Contact Me (Snow White)";
+});
